@@ -15,6 +15,8 @@ export function itemsIsLoading(bool) {
         isLoading: bool
     };
 }
+
+//will be called when the data has been successfully fetched, with the data passed to it as items.
 export function itemsFetchDataSuccess(items) {
     return {
         type: 'ITEMS_FETCH_DATA_SUCCESS',

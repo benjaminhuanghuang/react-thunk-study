@@ -2,6 +2,7 @@
     Using Redux
 */
 import React, { Component } from 'react';
+// connect is what allows us to connect a component to Redux's store
 import { connect } from 'react-redux';
 
 import { itemsFetchData } from '../actions/items';
@@ -30,6 +31,7 @@ class ItemList extends Component {
     }
 }
 
+// map Redux's state and the dispatching of our action creator to props.
 const mapStateToProps = (state) => {
     return {
         items: state.items,
