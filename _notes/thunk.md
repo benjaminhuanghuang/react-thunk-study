@@ -1,5 +1,6 @@
 By default, Redux action creators don’t support asynchronous actions like fetching data, so here’s where we utilise Redux Thunk. 
-Thunk allows you to write action creators that **return a function instead of an action**. The inner function can receive the store methods dispatch and getState as parameters, but we'll just use dispatch.
+Thunk allows you to write action creators that **return a function instead of an action**. 
+The inner function can receive the store methods dispatch and getState as parameters, but we'll just use dispatch.
 
 
 If it wasn’t for Redux Thunk, we would probably end up having just one action creator, something like this:
@@ -36,3 +37,15 @@ Using Redux Thunk, our action creator will be:
         };
     }
 ```
+
+## Reference 
+- Basics of Redux Thunk
+  - https://www.youtube.com/watch?v=1QI-UE3-0PU
+  
+- A Dummy’s Guide to Redux and Thunk in React
+  - https://medium.com/@stowball/a-dummys-guide-to-redux-and-thunk-in-react-d8904a7005d3
+  - https://github.com/stowball/dummys-guide-to-redux-and-thunk-react
+
+- Introduction to React with Redux and Redux Thunk
+  - http://work.haufegroup.io/intro-redux/
+  - https://github.com/bradeac/using-redux-with-react

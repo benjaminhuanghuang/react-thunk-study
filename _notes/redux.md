@@ -15,7 +15,7 @@ There are a few core principles to Redux which we need to understand:
 - For using Redux in React, the <Provider /> component wraps the entire application and passes the store down to all children.
 
 ## Design the actions
-From the work we’ve already done, we know that our state needs to have 3 properties: items, hasErrored and isLoading for this application to work, which correlates to needing 3 unique actions.
+Our state needs to have 3 properties: items, hasErrored and isLoading for this application to work, which correlates to needing 3 unique actions.
 
 Now, here is why Action Creators are different to Actions and do not necessarily have a 1:1 relationship: we need a fourth action creator that calls our 3 other action (creators) depending on the status of fetching the data. This fourth action creator is almost identical to our original fetchData() method, but instead of directly setting the state with this.setState({ isLoading: true }), we'll dispatch an action to do the same: dispatch(isLoading(true)).
 
