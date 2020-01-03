@@ -9,19 +9,19 @@ describes how to transform the current Redux store "state" into the props
 you want to pass to a presentational component you are wrapping.
 */
 const mapStateToProps = (state) => {
-    return {
-        items: state.items,
-        hasErrored: state.itemsHasErrored,
-        isLoading: state.itemsIsLoading
-    };
+  return {
+    items: state.items,
+    hasErrored: state.itemsHasErrored,
+    isLoading: state.itemsIsLoading
+  };
 };
 /*
     inject a prop called fetchData into component
 */
 const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchData: (url) => dispatch(itemsFetchData(url))
-    };
+  return {
+    fetchData: (url) => dispatch(itemsFetchData(url))
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
