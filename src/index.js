@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//
+import { Provider } from 'react-redux';
+//
 import './index.css';
-// import App from './App';
-import App from './AppRedux';
+import App from './App';
 
-import registerServiceWorker from './registerServiceWorker';
+import configureStore from "./store/configureStore";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = configureStore();  // You can also pass in an initialState here
 
-registerServiceWorker();
+ReactDOM.render(
+  <Provider store={store}>
+    <App appProps="passed in" />
+  </Provider>,
+  document.getElementById('root')
+);

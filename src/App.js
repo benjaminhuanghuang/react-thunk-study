@@ -1,17 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+//
+import ItemList from './containers/ItemListContainer';
 
-import './App.css';
-// import ItemList from './components/ItemList';
-import ItemList from './components/ItemList2';
+const App = () => (
+  <div>
+    <ItemList />
+  </div>
+)
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <ItemList/>
-      </div>
-    );
-  }
-}
-
-export default App;
+export default App

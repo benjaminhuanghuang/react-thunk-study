@@ -1,43 +1,27 @@
-/*
-    Hard-coding data
-*/
 import React, { Component } from 'react';
+
+/*
+    ItemListContains injects action, prop from redux into ItemList
+*/
 class ItemList extends Component {
-    constructor() {
-        super();
-        this.state = {
-            items: [
-                {
-                    id: 1,
-                    label: 'List item 1'
-                },
-                {
-                    id: 2,
-                    label: 'List item 2'
-                },
-                {
-                    id: 3,
-                    label: 'List item 3'
-                },
-                {
-                    id: 4,
-                    label: 'List item 4'
-                }
-            ],
-            hasErrored: false,
-            isLoading: false
-        };
+
+    componentDidMount() {
+
+        this.props.fetchData('http://5826ed963900d612000138bd.mockapi.io/items');
     }
+
     render() {
-        if (this.state.hasErrored) {
+        if (this.props.hasErrored) {
             return <p>Sorry! There was an error loading the items</p>;
         }
-        if (this.state.isLoading) {
+
+        if (this.props.isLoading) {
             return <p>Loading…</p>;
         }
+
         return (
             <ul>
-                {this.state.items.map((item) => (
+                {this.props.items.map((item) => (
                     <li key={item.id}>
                         {item.label}
                     </li>
@@ -45,5 +29,4 @@ class ItemList extends Component {
             </ul>
         );
     }
-}
-export default ItemList;
+} export default ItemList;
