@@ -1,7 +1,8 @@
-// Type name
+// Action type
 export const AGE_UP = "AGE_UP";
 export const AGE_DOWN = "AGE_DOWN";
 export const AGE_LOADING = "AGE_LOADING";
+export const AGE_FAIL = "AGE_FAIL";
 
 // Dispatch types
 export interface AgeUp {
@@ -18,4 +19,8 @@ export interface AgeLoading {
   type: typeof AGE_LOADING;
 }
 
-export type AgeDispatchTypes = AgeUp | AgeDown | AgeLoading;
+export interface AgeFail {
+  type: typeof AGE_FAIL;
+}
+
+export type AgeDispatchTypes = AgeUp | AgeDown | AgeLoading | AgeFail;

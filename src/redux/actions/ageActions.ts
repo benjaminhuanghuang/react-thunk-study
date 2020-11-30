@@ -1,5 +1,8 @@
-import { AGE_DOWN, AGE_UP, AgeDispatchTypes } from "./ageActionTypes";
+import { Dispatch } from "redux";
 
+import { AGE_DOWN, AGE_UP, AGE_LOADING, AGE_FAIL, AgeDispatchTypes } from "./ageActionTypes";
+
+// The Action creators
 export const AgeUp = (diff: number): AgeDispatchTypes => {
   return {
     type: AGE_UP,
@@ -12,4 +15,23 @@ export const AgeDown = (diff: number): AgeDispatchTypes => {
     type: AGE_DOWN,
     payload: diff,
   };
+};
+
+export const AgeUpAsync = (diff: number) => (dispatch: Dispatch<AgeDispatchTypes>) => {
+  try {
+    dispatch({
+      type: AGE_LOADING,
+    });
+    // asyc call
+    setTimeout(() => {
+      dispatch({
+        type: AGE_UP,
+        payload: diff,
+      });
+    }, 5000);
+  } catch (e) {
+    dispatch({
+      type: AGE_FAIL,
+    });
+  }
 };
