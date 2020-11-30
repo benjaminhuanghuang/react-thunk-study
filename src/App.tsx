@@ -13,7 +13,7 @@ const App = () => {
 
       <HelloReduxFunctional />
 
-      {/* <HelloReduxClass /> */}
+      <HelloReduxClass />
     </>
   );
 };

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {Wrapper} from "../styles";
+
 
 interface HelloReduxProps {
   
@@ -24,10 +26,11 @@ interface HelloReduxState {
   }
   render() {
     return (
-      <div>
+      <Wrapper>
+        <h2>Hello Redux Class Component</h2>
         <h2>{this.state.title}</h2>
         <button className="btn" onClick={()=>{this.changeTitle()}}>点击我改变标题</button>
-      </div>
+      </Wrapper>
     )
   }
 }
