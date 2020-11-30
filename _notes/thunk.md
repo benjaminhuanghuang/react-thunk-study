@@ -1,48 +1,46 @@
+## The vanilla redux
+
 ![](./_images/react-redux-cycle.png)
 
 ![](./_images/redux-dispatch.png)
 
 
 By default, Redux action creators don’t support asynchronous actions like fetching data.
-
-Redux Thunk give us direct control over the displach method.
-
-Thunk allows you to write action creators that **return a function instead of an action**. 
-
-The inner function can receive the store methods dispatch and getState as parameters, but we'll just use dispatch.
-
-If it wasn’t for Redux Thunk, we would probably end up having just one action creator, something like this:
 ```
-    export function itemsFetchData(url) {
-        const items = axios.get(url);
+    export funciton fetchData()
+    {
+        const request = axio.get('http://...')
 
+        // vanilla redux expect return an action with the data as the paylod there
+        // The action is a plain javascript object
         return {
-            type: 'ITEMS_FETCH_DATA',
+            type: 'FETCH_DATA',
             items
         };
     }
 ```
 Obviously, it would be a lot harder in this scenario to know if the items are still loading or checking if we have an error.
 
-Using Redux Thunk, our action creator will be:
+## Thunk
+Redux Thunk give us direct control over the displach method.
+
+Thunk allows the action creators returns **a function instead of an object**. 
+
+The first argument of the funciton is **dispatch**
 ```
-    export function itemsFetchData(url) {
-        return (dispatch) => {
-            dispatch(itemsAreLoading(true));
+    export funciton fetchData()
+    {
+        const request = axio.get('http://...')
 
-            axios.get(url)
-                .then((response) => {
-                    if (response.status !== 200) {
-                        throw Error(response.statusText);
-                    }
+        return (dispach) => {
+            dispatch(LOADING...);
 
-                    dispatch(itemsAreLoading(false));
-
-                    return response;
-                })
-                .then((response) => dispatch(itemsFetchDataSuccess(response.data)))
-                .catch(() => dispatch(itemsHaveError(true)));
-        };
+            request.then(({data})=>{
+                dispath({type:'FETCH_DATA', payload: data})
+            })
+            .catch(() => dispatch(ERROR...));
+        }
     }
 ```
+![](./_images/thunk-sequence.png)
 
