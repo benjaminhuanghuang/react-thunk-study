@@ -6,6 +6,10 @@ import HelloReduxFunctional from "./components/HelloReduxFunctional";
 
 import HelloReduxClass from "./components/HelloReduxClass";
 
+
+import Age from "./components/Age";
+
+
 const App = () => {
   return (
     <>
@@ -14,6 +18,8 @@ const App = () => {
       <HelloReduxFunctional />
 
       <HelloReduxClass />
+      
+      <Age />
     </>
   );
 };

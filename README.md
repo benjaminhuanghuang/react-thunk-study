@@ -1,8 +1,8 @@
 # React TypeScript Thunk Study Project
 
 ## technique
-- React
-- Redux
+- React Hook: useEffect, useState
+- Redux Hook: useSelector, useDispatch
 - Redux Thunk
 - TypeScript
 - Debug

@@ -1,9 +1,11 @@
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 //
-import helloReduxReducer from './helloReduxReducer'
+import helloReduxReducer from "./helloReduxReducer";
+import ageReducer from "./ageReducer";
 
 const RootReducer = combineReducers({
-  hello: helloReduxReducer
+  hello: helloReduxReducer,
+  age: ageReducer,
 });
 
-export default RootReducer
+export default RootReducer;

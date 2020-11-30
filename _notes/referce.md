@@ -8,6 +8,10 @@
 - https://www.youtube.com/watch?v=1QI-UE3-0PU
   
   
+## Redux-thunk Middleware | React Redux Series Part 7
+-https://www.youtube.com/watch?v=Sqkm39rqmEg&ab_channel=techsith
+
+
 - A Dummy’s Guide to Redux and Thunk in React
   - https://medium.com/@stowball/a-dummys-guide-to-redux-and-thunk-in-react-d8904a7005d3
   - https://github.com/stowball/dummys-guide-to-redux-and-thunk-react
