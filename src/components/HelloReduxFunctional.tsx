@@ -8,7 +8,7 @@ export default function () {
   const helloState = useSelector((state: RootStore) => state.hello);
   const dispatch = useDispatch();
 
-  const handleSubmit = () => dispatch(ChangeHelloName("New hello name"));
+  const handleSubmit = () => dispatch(ChangeHelloName("New hello name" + new Date().getTime()));
 
   return (
     <div>
