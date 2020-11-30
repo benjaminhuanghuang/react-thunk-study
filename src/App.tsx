@@ -1,11 +1,21 @@
-import React from 'react';
+import React from "react";
 //
-import ItemList from './containers/ItemListContainer';
+import ItemList from "./containers/ItemListContainer";
 
-const App = () => (
-  <div>
-    <ItemList />
-  </div>
-)
+import HelloReduxFunctional from "./components/HelloReduxFunctional";
 
-export default App
+import HelloReduxClass from "./components/HelloReduxClass";
+
+const App = () => {
+  return (
+    <>
+      {/* <ItemList /> */}
+
+      <HelloReduxFunctional />
+
+      {/* <HelloReduxClass /> */}
+    </>
+  );
+};
+
+export default App;

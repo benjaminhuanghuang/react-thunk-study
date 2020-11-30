@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 
+interface HelloReduxProps {
+  
+}
 
- class Hello extends Component {
-  constructor(props){
+interface HelloReduxState {
+  title: string
+};
+
+
+ class HelloReduxClass extends Component<HelloReduxProps, HelloReduxState> {
+  constructor(props:any){
     super(props)
     this.state = {
       title:'学习redux'
@@ -23,4 +31,4 @@ import React, { Component } from 'react'
     )
   }
 }
-export default Hello
+export default HelloReduxClass
