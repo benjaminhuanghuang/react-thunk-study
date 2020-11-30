@@ -65,7 +65,7 @@ export interface PokemonLoading {
 export type PokemonDispatchTypes = PokemonLoading | PokemonFail | PokemonSuccess
 
 
-// Actions
+// Action creator
 import { Dispatch } from "redux";
 
 export const GetPokemon = (pokemon: string) => async (dispatch: Dispatch<PokemonDispatchTypes>) => {
