@@ -17,21 +17,23 @@ export const AgeDown = (diff: number): AgeDispatchTypes => {
   };
 };
 
-export const AgeUpAsync = (diff: number) => (dispatch: Dispatch<AgeDispatchTypes>) => {
-  try {
-    dispatch({
-      type: AGE_LOADING,
-    });
-    // asyc call
-    setTimeout(() => {
+export const AgeUpAsync = (diff: number) => {
+  return (dispatch: Dispatch<AgeDispatchTypes>) => {
+    try {
       dispatch({
-        type: AGE_UP,
-        payload: diff,
+        type: AGE_LOADING,
       });
-    }, 5000);
-  } catch (e) {
-    dispatch({
-      type: AGE_FAIL,
-    });
-  }
+      // asyc call
+      setTimeout(() => {
+        dispatch({
+          type: AGE_UP,
+          payload: diff,
+        });
+      }, 3000);
+    } catch (e) {
+      dispatch({
+        type: AGE_FAIL,
+      });
+    }
+  };
 };
