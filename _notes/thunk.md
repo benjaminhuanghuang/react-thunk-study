@@ -1,9 +1,15 @@
+![](./_images/react-redux-cycle.png)
+
+![](./_images/redux-dispatch.png)
+
+
 By default, Redux action creators don’t support asynchronous actions like fetching data.
+
+Redux Thunk give us direct control over the displach method.
 
 Thunk allows you to write action creators that **return a function instead of an action**. 
 
 The inner function can receive the store methods dispatch and getState as parameters, but we'll just use dispatch.
-
 
 If it wasn’t for Redux Thunk, we would probably end up having just one action creator, something like this:
 ```
